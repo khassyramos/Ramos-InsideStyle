@@ -624,12 +624,14 @@
 .package_theme {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
 }
 .package_left {
   width: 500rem;
 }
 .package_right {
-  margin-right: 2rem;
+  margin-left: 2rem;
   margin-top: 3rem;
   text-align: justify;
 }
@@ -662,6 +664,7 @@
   .package_theme {
     display: grid;
     grid-template-columns: 390px;
+    justify-content: center;
   }
   .catalogBanner_wrapper h2 {
     font-size: 4rem;
@@ -687,14 +690,12 @@
     align-items: center;
   }
   .package_right h2 {
-    margin-right: 0rem;
+    margin-left: 0rem;
     margin-top: 0rem;
     text-align: center;
     font-size: 5rem;
   }
 }
-
-
 
 
 /* UPDATES SECTION */
@@ -718,7 +719,6 @@
     text-align: center;
     color: var(--clr-primary);
     margin-bottom: 5rem;
-
   }
   .updatesBanner__wrapper img{
     padding: 3rem 0;
@@ -865,6 +865,9 @@ padding: 3rem;
     border-bottom: 1px solid gray;
     padding: 1rem 2rem;
   }
+  .contact__infos label{
+    margin-right:5rem;
+  }
   .contact__forms button{
     width: 100%;
     padding: 1rem 2rem;
@@ -904,6 +907,7 @@ padding: 3rem;
     margin-bottom: 2rem;
     font-weight: 700;
   }
+  
 
   /* CONTACTS MOBILE */
     @media screen and (max-width:520px){
