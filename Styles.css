@@ -283,6 +283,7 @@
     position: relative;
     top: 4rem;
 }
+
 /* homeBanner mobile */
 @media screen and (max-width: 520px){
   .homeBanner__wrapper{
@@ -412,14 +413,13 @@
     align-items: center;
   }
   .cta h2{
-    font-size: 2.5rem;
-    font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 700;
   }
   .cta p{
     margin-bottom: 1rem;
   }
-
-
+  
   /* Footer */
   .footer{
     background-color: var(--clr-dark);
@@ -593,59 +593,111 @@
 }
 
 
-/* INTERIOR PACKAGE */
+/* PACKAGE SECTION */
 
-.package_wrapper h2 {
-  color: var(--clr-primary);
-  font-size: 6rem;
-  font-weight: 700;
-  text-align: center;
-  padding: 3rem;
+.package_wrapper {
   display: flex;
-  font-display: column;
-  justify-content: center;
+  flex-direction: column;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 .package_theme {
   padding: 5rem;
   display: flex;
   gap: 0.5rem;
+  max-width: 1500px;
+  width: 100%;
 }
-
-.package_left {
-  width: 500rem;
-  margin-left: 20rem;
-  margin-top: 5rem;
-}
-
-.package_left img {
-  width: 550px;
-  height: 35rem;
-  
-}
-.package_right h2 {
+.package_wrapper h2 {
   color: var(--clr-primary);
-  display: flex;
   font-size: 6rem;
   font-weight: 700;
   text-align: center;
-  margin-left: 6rem;
-  height: -20rem;
-  align-items: center;
+  max-width: 100%;
 }
-.package_right p {
-  font-size: 2rem;
-  line-height: 2.5rem;
+.package_right h2 {
+  color: var(--clr-primary);
+  font-size: 6rem;
+  font-weight: 700;
+  text-align: center;
+}
+.package_theme {
+  display: flex;
+  flex-direction: row;
+}
+.package_left {
+  width: 500rem;
+}
+.package_right {
+  margin-right: 2rem;
+  margin-top: 3rem;
   text-align: justify;
 }
 .package_theme:nth-child(odd) {
-  background-color: var(--clr-semilight);
   flex-direction: row-reverse;
-  display: flex;
+  background-color: var(--clr-semilight);
+  position: relative;
+}
+.package_theme:nth-child(odd)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 800rem;
+  height: 100%;
+  background-color: var(--clr-semilight);
+  left: 100%;
+}
+.package_theme:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 800rem;
+  height: 100%;
+  background-color: var(--clr-semilight);
+  right: 100%;
+}
+
+/* CATALOG MOBILE */
+@media (max-width: 520px) {
+  .package_theme {
+    display: grid;
+    grid-template-columns: 390px;
+  }
+  .catalogBanner_wrapper h2 {
+    font-size: 4rem;
+  }
+  .catalogBanner_wrapper p {
+    font-size: 2rem;
+  }
+
+  /* PACKAGE SECTION MOBILE*/
+  .package_wrapper h2 {
+    font-size: 4.5rem;
+  }
+  .package_left img {
+    margin-bottom: 0rem;
+    display: flex;
+    width: 35rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .package_right {
+    padding: 0rem 0rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .package_right h2 {
+    margin-right: 0rem;
+    margin-top: 0rem;
+    text-align: center;
+    font-size: 5rem;
+  }
 }
 
 
-/* UPDATES SECTION */
 
+
+/* UPDATES SECTION */
 .updatesBanner{
     padding: 3rem 0;
   }
@@ -767,57 +819,109 @@ padding: 3rem;
   margin-top: 1rem;
 }
 
-
-
-
-/* CONTACTS PAGE */
-.contactsBanner{
-  padding: 3rem 0;
-}
-.contactsBanner__wrapper{
- margin-top: 5rem;
- display: grid;
- grid-template-columns: 1fr 1fr;
- grid-gap: 10rem; 
-
-}
-.contactsBanner__wrapper h1{
-  font-size: 7rem;
-  color: var(--clr-primary);
-}
-.contactsBanner
-.contactsBanner label::after{
-  display: inline-block;
-  position: relative;
-  content: " ";
-  background-color: var(--clr-dark);
-  height: .1rem;
-  width: 50rem;
-  bottom: 1rem;
-}
-.contactsBanner label:nth-child(2){
-  margin-bottom: 5rem;
+/* UPDATES MOBILE */
+@media screen and (max-width: 520px){
+  .updatesBanner__wrapper{
+    flex-direction: column;
+  }
+  .buildingSection__wrapper{
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+  }
+  .projectss__wrapper{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 
-/* CONTACTS INFO */
-.contact__info{
-  background-color: var(--clr-dark);
-  color: var(--clr-light);
-  padding: 5rem;
-  margin: 20rem;
-  display: flex;
-  font-size: 3rem;
-}
-/* .contact__info ul li a{
-  color: var(--clr-dark);
-  justify-content: flex-end;
-  align-items: flex-end;
-  display: flex;
-  font-size: 3rem;
-  justify-content: center;
-} */
 
+/* CONTACT SECTION */
+.contactBanner{
+    padding: 3rem 0;
+  }
+  .contact__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20rem;
+  }
+  .contact__forms h1{
+    color: var(--clr-primary);
+    font-size: 7rem;
+    margin-top: 5rem;
+  }
+  .contact__forms p{
+    margin-bottom: 3rem;
+  }
+  .contact__forms h5{
+    margin-left: 2rem;
+  }
+  .contact__forms input,
+  .contact__forms textarea{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    padding: 1rem 2rem;
+  }
+  .contact__forms button{
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    margin-top: 10rem;
+    border: none;
+    border-radius: 5rem;
+  }
+  .contact__forms button:hover{
+    color: var(--clr-primary);
+  }
+
+    /* INFOS SECTION */
+  .contact__infos{
+    background-color: var(--clr-dark);
+    padding: 8rem 0;
+    margin-top: 10rem;
+  }
+  .contact__infos ul li {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    color: var(--clr-light);
+    font-size: 3rem;
+    margin-right: 5rem;
+    margin-bottom: 5rem;
+  }
+  .contact__infos i{
+    color: var(--clr-secondary);
+  }
+  .contact__infos h2{
+    color: var(--clr-light);
+    font-size: 3rem;
+    display: flex;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+
+  /* CONTACTS MOBILE */
+    @media screen and (max-width:520px){
+      .contact__forms{
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact__wrapper{
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 1rem;
+        justify-content: center;
+      }
+      .contact__forms button{
+        justify-items: center;
+        align-items: center;
+      }
+    }
 
 
   /* REPEATABLE/COMPONENTS/ASSSETS*/
